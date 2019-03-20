@@ -235,7 +235,7 @@ the following underneath the ``_ready()`` function:
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        get_node("Button")
+        get_node("Button") # Alternatively $Button
 
  .. code-tab:: csharp
 
@@ -250,7 +250,7 @@ Next, write a function which will be called when the button is pressed:
  .. code-tab:: gdscript GDScript
 
     func _on_Button_pressed():
-        get_node("Label").text = "HELLO!"
+        get_node("Label").text = "HELLO!" # Alternatively $Label.text= "HELLO!"
 
  .. code-tab:: csharp
 
@@ -266,7 +266,7 @@ using :ref:`Object.connect() <class_Object_method_connect>`.
  .. code-tab:: gdscript GDScript
 
     func _ready():
-        get_node("Button").connect("pressed", self, "_on_Button_pressed")
+        get_node("Button").connect("pressed", self, "_on_Button_pressed") # Alternatively $Button.connect("pressed", self, "_on_Button_pressed")
 
  .. code-tab:: csharp
 
@@ -283,10 +283,10 @@ The final script should look like this:
     extends Panel
 
     func _ready():
-        get_node("Button").connect("pressed", self, "_on_Button_pressed")
+        get_node("Button").connect("pressed", self, "_on_Button_pressed") # Alternatively $Button.connect("pressed", self, "_on_Button_pressed")
 
     func _on_Button_pressed():
-        get_node("Label").text = "HELLO!"
+        get_node("Label").text = "HELLO!" # Alternatively $Label.text = "HELLO!"
 
  .. code-tab:: csharp
 
@@ -326,7 +326,7 @@ Why, hello there! Congratulations on scripting your first scene.
 
     # Not for this case,
     # but just in case.
-    get_node("Label/Button")
+    get_node("Label/Button") # Alternatively $Label/Button
 
  .. code-tab:: csharp
 
